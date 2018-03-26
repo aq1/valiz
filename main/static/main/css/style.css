@@ -735,3 +735,7 @@ div.schedule div.doctor {
 table.m-table.price {
 	margin-top: 15px;
 }
+
+tr.price-list-name td {
+	background: none !important;
+}
