@@ -17,7 +17,7 @@ class DocumentImageInline(admin.TabularInline):
 
 @admin.register(Doctor)
 class DoctorAdmin(admin.ModelAdmin):
-    list_display = 'short_name', 'name', 'short_title', 'bio', 'schedule'
+    list_display = 'short_name', 'name', 'short_title', 'bio',# 'schedule'
     list_editable = 'name', 'short_title', 'bio'
 
     inlines = [
@@ -27,7 +27,7 @@ class DoctorAdmin(admin.ModelAdmin):
     def schedule(self, instance):
         _schedule = instance.schedule()
         if not _schedule:
-            return
+            return ''
         return '<br>'.join(map(str, _schedule))
 
     schedule.allow_tags = True
