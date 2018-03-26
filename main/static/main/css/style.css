@@ -732,6 +732,6 @@ div.schedule div.doctor {
 	padding: 5px;
 }
 
-.price-list-name {
-	padding-top: 20px;
+.price-list-name td {
+	padding-top: 20px !important;
 }
