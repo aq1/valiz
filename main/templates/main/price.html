@@ -5,16 +5,16 @@
         <div class="ic"></div>
         <div class="container_12">
             <div class="warning"><p>Уточняйте цены по <a href="contacts">телефону</a></p></div>
-            <table class="m-table price">
-                <tr>
-                    <th>Наименование</th>
-                    <th>Цена</th>
-                </tr>
-                {% for price_list in price_lists %}
+            {% for price_list in price_lists %}
+                <table class="m-table price">
                     <tr class="price-list-name">
                         <td class="t-subtitle" colspan="4">
                             {{ price_list.name }}
                         </td>
+                    </tr>
+                    <tr>
+                        <th>Наименование</th>
+                        <th>Цена</th>
                     </tr>
                     {% for price in price_list.price_set.all %}
                         <tr>
@@ -22,8 +22,8 @@
                             <td>{{ price.price }}</td>
                         </tr>
                     {% endfor %}
-                {% endfor %}
-            </table>
+                </table>
+            {% endfor %}
             <div class="warning"><p>Дети с семи лет по направлению лечащего врача</p></div>
         </div>
     </div>
