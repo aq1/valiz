@@ -728,5 +728,6 @@ h1.document-title {
 }
 
 div.schedule div.doctor {
+	margin-top: 10px;
 	padding: 5px;
 }
