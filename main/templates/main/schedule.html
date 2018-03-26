@@ -7,7 +7,7 @@
             <div class="warning">
                 <p>Расписание может меняться.</p>
                 <p>Прием осуществляется по
-                    <a href="contacts">предварительной записи</a>
+                    <a href="/contacts">предварительной записи</a>
                 </p>
             </div>
             <div class="schedule">
@@ -27,7 +27,7 @@
                                         {{ schedule.get_day_display }}
                                     </div>
                                     <div style="width: 500px; display:inline-block;">
-                                        {{ schedule.begin | time }} - {{ schedule.end | time }}
+                                        {{ schedule.begin }} - {{ schedule.end }}
                                         {% if schedule.parity != 0 %}
                                             <span class="parity">
                                                 {{ schedule.get_parity_display }}
