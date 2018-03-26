@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div class="content">
+        <div class="ic"></div>
+        <div class="container_12">
+            <div class="warning">
+                <p>Расписание может меняться.</p>
+                <p>Прием осуществляется по
+                    <a href="contacts">предварительной записи</a>
+                </p>
+            </div>
+            <div class="schedule">
+                {% for doctor in doctors %}
+                    <div class="doctor">
+                        {% if doctor.type == 0 %}
+                            <div>
+                                {{ doctor.short_name }}
+                            </div>
+                            <div class="category">
+                                {{ doctor.get_category_display }} категория
+                            </div>
+                            {% for schedule in doctor.schedule_set.all %}
+                                <div>
+                                    <div style="width: 150px; display:inline-block">
+                                        {{ schedule.get_day_display }}
+                                    </div>
+                                    <div style="width: 500px; display:inline-block;">
+                                        {{ schedule.begin }} - {{ schedule.end }}
+                                        {% if schedule.parity != 0 %}
+                                            <span class="parity">
+                                                {{ schedule.get_parity_display }}
+                                            </span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

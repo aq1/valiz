@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div class="content">
+        <div class="ic"></div>
+        <div class="container_12">
+            <div class="grid_12">
+                <div class="grid_5 prefix_1 alpha">
+                    <h3></h3>
+                    <div class="map">
+                        <figure class="img_inner fleft">
+                            <iframe src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=ru&amp;geocode=&amp;ie=UTF8&amp;q={{ contacts.map }}&amp;output=embed"></iframe>
+                        </figure>
+                        <ul class="c-ul">
+                            <li>{{ contacts.address }}</li>
+                            <li>{{ contacts.schedule }}</li>
+                            <li>{{ contacts.city_number }}</li>
+                            <li>{{ contacts.mobile_number }}</li>
+                            <li>{{ contacts.email }}</li>
+                            <li>Директор: {{ contacts.ceo }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid_4  prefix_1 omega">
+                    <div class="warning"><p>Запись на прием осуществляется по телефону</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

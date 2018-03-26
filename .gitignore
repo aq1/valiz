@@ -1,0 +1,41 @@
+# Local files
+/psd/
+/log/
+/tmp/
+/www/
+*_local.*
+*.sqlite3
+
+# File system caches
+.DS_Store
+._*
+
+# IDE system files
+.ropeproject
+.vim
+.idea
+.ve
+.tags
+.env
+*.sublime-workspace
+*.sublime-project
+
+# Temporary files
+*.py[oc]
+*.sw[opn]
+*~
+
+# Deploy files
+REVISION
+/env/
+.noseids
+
+# Node modules
+src/blog/editor/node_modules/
+src/blog/editor/bower_components/
+node_modules/
+
+/reload
+/idea
+/media
+/static

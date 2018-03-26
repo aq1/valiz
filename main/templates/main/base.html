@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load staticfiles %}
+<head>
+    <title>Вализ</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static 'main/images/favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static 'main/images/favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/jquery.jscrollpane.css' %}">
+    <script src="{% static 'main/js/jquery.js' %}"></script>
+    <script src="{% static 'main/js/jquery-migrate-1.1.1.js' %}"></script>
+    <script src="{% static 'main/js/superfish.js' %}"></script>
+    <script src="{% static 'main/js/jquery.mousewheel.js' %}"></script>
+    <script src="{% static 'main/js/jquery.equalheights.js' %}"></script>
+    <script src="{% static 'main/js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'main/js/jquery.jscrollpane.min.js' %}"></script>
+
+    <script>
+        $(function () {
+            $('.scroll-pane').jScrollPane({showArrows: true});
+        });
+
+
+    </script>
+    <!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="{% static 'main/http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+         </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="{% static 'main/js/html5shiv.js' %}"></script>
+      <link rel="stylesheet" media="screen" href="{% static 'main/css/ie.css' %}">
+
+    <![endif]-->
+</head>
+<body class="">
+<!--==============================header=================================-->
+<header class="oth_pages">
+    <div class="container_12">
+        <div class="grid_4">
+            <nav>
+                <a href="/schedule" class="link1">Расписание</a>
+                <a href="/contacts" class="link1">Контакты</a>
+                <a href="/photo" class="link1">Фото</a>
+            </nav>
+        </div>
+        <div class="grid_4"><h1><a href="/"><img src="{% static 'main/images/logo.png' %}" alt="Brand Identity"></a>
+        </h1></div>
+        <div class="grid_4 ">
+            <nav>
+                <a href="/price" class="link1">Прайс</a>
+                <a href="/doctors" class="link1">Врачи</a>
+                <a href="/documents" class="link1">Документы</a>
+            </nav>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</header>
+
+
+<!--==============================Content=================================-->
+{% block content %}
+{% endblock %}
+
+<!--==============================footer=================================-->
+
+<footer>
+    <div class="container_12">
+        <div class="grid_12">
+            <div class="socials">
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </div>
+            <div class="copy">
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

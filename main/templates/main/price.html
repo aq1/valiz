@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div class="content">
+        <div class="ic"></div>
+        <div class="container_12">
+            <div class="warning"><p>Уточняйте цены по <a href="contacts">телефону</a></p></div>
+            <table class="m-table price">
+                <tr>
+                    <th>Наименование</th>
+                    <th>Цена</th>
+                </tr>
+                {% for price_list in price_lists %}
+                    <tr>
+                        <td class="t-subtitle" colspan="4">
+                            {{ price_list.name }}
+                        </td>
+                    </tr>
+                    {% for price in price_list.price_set.all %}
+                        <tr>
+                            <td>{{ price.name }}</td>
+                            <td>{{ price.price }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            </table>
+            <div class="warning"><p>Дети с семи лет по направлению лечащего врача</p></div>
+        </div>
+    </div>
+{% endblock %}

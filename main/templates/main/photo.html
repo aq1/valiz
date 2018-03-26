@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="content">
+        <div class="ic"></div>
+        <div class="container_12">
+            <div class="grid_12">
+                <div class="grid_10 prefix_1 alpha omega">
+                    <div class="center">
+                        <h3>&nbsp</h3>
+                        <div class="portfolio">
+                            {% for photo in photos %}
+                                <a href="{{ photo.photo.url }}" class="gal">
+                                    <img src="{{ photo.photo.url }}" alt="" width="220px">
+                                    <span></span>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

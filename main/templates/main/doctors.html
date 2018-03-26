@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+    <div class="content">
+    <div class="ic"></div>
+    <div class="container_12">
+        <div class="grid_12">
+            <div class="grid_10 prefix_1 alpha omega">
+                <div class="doctors">
+                    {% for doctor in doctors %}
+                        <div class="doctor">
+                            <p class="category">{{ doctor.short_title }}</p>
+                            <p class="name">{{ doctor.name }}</p>
+                            <ul class="ul-info">
+                                {% for bio in doctor.biography %}
+                                    <li>{{ bio }}</li>
+                                {% endfor %}
+                            </ul>
+                            <hr>
+                        </div>
+                    {% endfor %}
+                    <div class="notes">Оказание услуг по гастроэнторологии, неврологии, травматологии, массажу
+                        приостановлены из-за отсутствия специалистов
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

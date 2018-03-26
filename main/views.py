@@ -1,0 +1,56 @@
+from django.shortcuts import render_to_response
+
+from main.models import *
+
+
+def index(request):
+    return render_to_response('main/index.html')
+
+
+def schedule(request):
+    context = {
+        'doctors': Doctor.objects.all().prefetch_related('schedule_set'),
+    }
+    return render_to_response('main/schedule.html', context=context)
+
+
+def contacts(request):
+    context = {
+        'contacts': Contacts.objects.get(id=1)
+    }
+    return render_to_response('main/contacts.html', context=context)
+
+
+def photo(request):
+    context = {
+        'photos': Photo.objects.all()
+    }
+    return render_to_response('main/photo.html', context=context)
+
+
+def price(request):
+    context = {
+        'price_lists': PriceList.objects.all().prefetch_related('price_set'),
+    }
+    return render_to_response('main/price.html', context=context)
+
+
+def doctors(request):
+    context = {
+        'doctors': Doctor.objects.all(),
+    }
+    return render_to_response('main/doctors.html', context=context)
+
+
+def documents(request):
+    context = {
+        'documents': Document.objects.all()
+    }
+    return render_to_response('main/documents.html', context=context)
+
+
+def document(request, pk):
+    context = {
+        'document': Document.objects.prefetch_related('documentimage_set').get(pk=pk),
+    }
+    return render_to_response('main/document.html', context=context)
