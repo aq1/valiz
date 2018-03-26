@@ -25,7 +25,10 @@ class DoctorAdmin(admin.ModelAdmin):
     ]
 
     def schedule(self, instance):
-        return '<br>'.join(map(str, instance.schedule()))
+        _schedule = instance.schedule()
+        if not _schedule:
+            return
+        return '<br>'.join(map(str, _schedule))
 
     schedule.allow_tags = True
 
