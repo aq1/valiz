@@ -737,5 +737,5 @@ table.m-table.price {
 }
 
 tr.price-list-name td, tr.price-list-name th {
-	background: none !important;
+	background: white !important;
 }
