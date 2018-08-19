@@ -54,7 +54,7 @@ class PhotoAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Contacts)
+@admin.register(Contact)
 class ContactsAdmin(admin.ModelAdmin):
     list_display = 'id', 'map', 'address', 'schedule', 'city_number', 'mobile_phone', 'email', 'ceo'
     list_editable = list_display[1:]

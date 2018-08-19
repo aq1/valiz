@@ -8,6 +8,7 @@ class Doctor(models.Model):
     TYPE = (
         (0, u'УЗИ'),
         (1, u'Функциональная диагностика'),
+        (2, u'Консультация врача кардиолога'),
     )
     CATEGORY = (
         (0, u'Высшая'),
@@ -32,7 +33,10 @@ class Doctor(models.Model):
         return self.bio.splitlines()
 
     def short_name(self):
-        return u'{} {[0]}. {[0]}.'.format(*self.name.split())
+        try:
+            return u'{} {[0]}. {[0]}.'.format(*self.name.split())
+        except IndexError:
+            return self.name
 
     def __unicode__(self):
         return self.short_name()
@@ -139,7 +143,7 @@ class Photo(models.Model):
         return self.photo.url
 
 
-class Contacts(models.Model):
+class Contact(models.Model):
 
     address = models.CharField(max_length=255, verbose_name=u'Адрес')
     map = models.CharField(max_length=255, verbose_name=u'Адрес для карты')

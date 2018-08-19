@@ -40,3 +40,4 @@ node_modules/
 /media
 /static
 index.wsgi
+valiz/settings_local.py

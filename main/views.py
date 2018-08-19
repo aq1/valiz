@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 from django.shortcuts import render_to_response
 
 from main.models import *
@@ -8,15 +10,19 @@ def index(request):
 
 
 def schedule(request):
+    all_doctors = OrderedDict()
+    for each in Doctor.TYPE:
+        all_doctors[each[1]] = Doctor.objects.filter(type=each[0])
+
     context = {
-        'doctors': Doctor.objects.all().prefetch_related('schedule_set'),
+        'all_doctors': all_doctors,
     }
     return render_to_response('main/schedule.html', context=context)
 
 
 def contacts(request):
     context = {
-        'contacts': Contacts.objects.get(id=1)
+        'contacts': Contact.objects.get(id=1)
     }
     return render_to_response('main/contacts.html', context=context)
 

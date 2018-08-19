@@ -26,7 +26,7 @@ text-decoration:none;
 
 
 body {
-	background:#ffffff;
+	background: #ffffff;
 	font: 14px/20px  Arial, Helvetica, sans-serif;
 	color:#969698;
 	position:relative;
@@ -730,6 +730,10 @@ h1.document-title {
 div.schedule div.doctor {
 	margin-top: 10px;
 	padding: 5px;
+}
+
+div.schedule > div.doctor_type {
+    background-color: #ffffff;
 }
 
 table.m-table.price {
