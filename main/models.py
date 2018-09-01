@@ -97,11 +97,21 @@ class Price(models.Model):
     price_list = models.ForeignKey(PriceList, verbose_name=u'Прайс Лист')
     name = models.CharField(max_length=255, verbose_name=u'Название Услуги')
     price = models.CharField(max_length=255, verbose_name=u'Цена')
+    ordering = models.IntegerField(blank=True, default=0, verbose_name=u'Порядковый номер')
 
     class Meta:
         verbose_name = u'Цена'
         verbose_name_plural = u'Цены'
-        ordering = ['price_list', 'name', 'price']
+        ordering = ['price_list', 'ordering', 'name', 'price']
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        if not self.ordering:
+            print
+            self.ordering = Price.objects.filter(
+                price_list=self.price_list
+            ).aggregate(m=models.Max('ordering'))['m'] + 1
+        return super(Price, self).save(force_insert, force_update, using, update_fields)
 
 
 class Document(models.Model):

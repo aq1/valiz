@@ -92,6 +92,6 @@ MEDIA_URL = '/media/'
 
 
 try:
-    from settings_local import *
+    from valiz.settings_local import *
 except ImportError:
     pass
