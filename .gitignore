@@ -41,3 +41,5 @@ node_modules/
 /static
 index.wsgi
 valiz/settings_local.py
+venv/
+db

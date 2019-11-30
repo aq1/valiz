@@ -9,14 +9,15 @@ from main.views import *
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', index),
-    url(r'^schedule/$', schedule),
-    url(r'^contacts/$', contacts),
-    url(r'^photo/$', photo),
-    url(r'^price/$', price),
-    url(r'^doctors/$', doctors),
-    url(r'^documents/$', documents),
-    url(r'^documents/(?P<pk>\d+)$', document),
+    url(r'^$', index, name='index'),
+    url(r'^schedule/$', schedule, name='schedule'),
+    url(r'^contacts/$', contacts, name='contacts'),
+    url(r'^photo/$', photo, name='photo'),
+    url(r'^price/$', price, name='price'),
+    url(r'^doctors/$', doctors, name='doctors'),
+    url(r'^documents/$', documents, name='documents'),
+    url(r'^documents/(?P<pk>\d+)$', document, name='document'),
+    url(r'^announcements/$', announcements, name='announcements'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -60,3 +60,10 @@ def document(request, pk):
         'document': Document.objects.prefetch_related('documentimage_set').get(pk=pk),
     }
     return render_to_response('main/document.html', context=context)
+
+
+def announcements(request):
+    context = {
+        'announcements': Announcement.objects.all()
+    }
+    return render_to_response('main/announcements.html', context=context)

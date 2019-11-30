@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+    <div class="content">
+    <div class="ic"></div>
+    <div class="container_12">
+        <div class="grid_12">
+            <div class="grid_10 prefix_1 alpha omega">
+                <div class="doctors" style="margin-top: 20px">
+                    {% if not announcements %}
+                        <p style="font-size: 25px">Здесь будут публиковаться последние новости и объявления</p>
+                    {% endif %}
+                    {% for announcement in announcements %}
+                        <div class="doctor">
+                            <p class="category">{{ announcement.datetime | date:"d.m.Y" }}</p>
+                            <p class="name">{{ announcement.title }}</p>
+                            {% if announcement.image %}
+                                <p style="width: 70%; text-align: center;">
+                                    <img src="{{ announcement.image.url }}" alt="" style="max-height: 500px">
+                                </p>
+                            {% endif %}
+                                <p style="white-space: pre-line">{{ announcement.text }}</p>
+                            <hr>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

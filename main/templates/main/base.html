@@ -42,18 +42,18 @@
     <div class="container_12">
         <div class="grid_4">
             <nav>
-                <a href="/schedule" class="link1">Расписание</a>
-                <a href="/contacts" class="link1">Контакты</a>
-                <a href="/photo" class="link1">Фото</a>
+                <a href="{% url 'schedule' %}" class="link1">Расписание</a>
+                <a href="{% url 'contacts' %}" class="link1">Контакты</a>
+                <a href="{% url 'announcements' %}" class="link1">Объявления</a>
             </nav>
         </div>
         <div class="grid_4"><h1><a href="/"><img src="{% static 'main/images/logo.png' %}" alt="Brand Identity"></a>
         </h1></div>
         <div class="grid_4 ">
             <nav>
-                <a href="/price" class="link1">Прайс</a>
-                <a href="/doctors" class="link1">Врачи</a>
-                <a href="/documents" class="link1">Документы</a>
+                <a href="{% url 'price' %}" class="link1">Прайс</a>
+                <a href="{% url 'doctors' %}" class="link1">Врачи</a>
+                <a href="{% url 'documents' %}" class="link1">Документы</a>
             </nav>
         </div>
         <div class="clear">

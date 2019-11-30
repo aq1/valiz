@@ -1,6 +1,7 @@
 # coding=utf-8
 
 from django.db import models
+from django.utils import timezone
 
 
 class Doctor(models.Model):
@@ -166,3 +167,21 @@ class Contact(models.Model):
     class Meta:
         verbose_name = u'Контакт'
         verbose_name_plural = u'Контакты'
+
+
+class Announcement(models.Model):
+
+    title = models.CharField(max_length=255, verbose_name=u'Заголовок')
+    datetime = models.DateTimeField(default=timezone.now, verbose_name=u'Дата публикации')
+    text = models.TextField(verbose_name=u'Текст')
+    image = models.ImageField(
+        null=True,
+        blank=True,
+        verbose_name=u'Изображение',
+        upload_to='announcements',
+    )
+
+    class Meta:
+        verbose_name = u'Объявление'
+        verbose_name_plural = u'Объявления'
+        ordering = ['-pk']

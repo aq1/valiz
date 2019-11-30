@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
-     <head>
-     {% load staticfiles %}
-     <title>Вализ</title>
-     <meta charset="utf-8">
-     <script>
+<head>
+    {% load staticfiles %}
+    <title>Вализ</title>
+    <meta charset="utf-8">
+    <script>
 
 
-     </script>
-     <!--[if lt IE 8]>
+    </script>
+    <!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
          <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg' %}" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
@@ -20,52 +20,61 @@
       <link rel="stylesheet" media="screen" href="css/ie.css' %}">
 
     <![endif]-->
-     </head>
-     <body  class="page1">
+</head>
+<body class="page1">
 <!--==============================header=================================-->
- <header> 
-  <div class="container_12">
-    <div class="grid_12">
-      
+<header>
+    <div class="container_12">
+        <div class="grid_12">
+
+        </div>
+        <div class="grid_4">
+            <div class="port">
+                <div>
+                    <a class="link_img" href="{% url 'schedule' %}"><img src="{% static 'main/images/page1_img1.jpg' %}"
+                                                                         alt=""><span></span></a>
+                    <a href="{% url 'schedule' %}" class="maxheight link1">Расписание</a>
+                </div>
+            </div>
+        </div>
+        <div class="grid_4"><h1><a href="/"><img src="{% static 'main/images/logo.png' %}" alt="Brand Identity"></a>
+        </h1></div>
+        <div class="grid_4 fright">
+            <div class="port">
+                <a class="link_img " href="{% url 'contacts' %}"> <img src="{% static 'main/images/page1_img2.jpg' %}"
+                                                                       alt=""><span></span></a>
+                <a href="{% url 'contacts' %}" class="maxheight link1">Контакты</a>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="port1">
+            <div class="grid_12">
+                <div class="port">
+                    <a class="link_img " href="{% url 'photo' %}"><img src="{% static 'main/images/page1_img3.jpg' %}"
+                                                                       alt=""><span></span></a>
+                    <a href="{% url 'photo' %}" class="link1 ">Фото</a>
+                </div>
+                <div class="port">
+                    <a class="link_img " href="{% url 'price' %}"><img src="{% static 'main/images/page1_img4.jpg' %}"
+                                                                       alt=""><span></span></a>
+                    <a href="{% url 'price' %}" class="link1 ">Прайс</a></div>
+            </div>
+        </div>
+        <div class="port2">
+            <div class="grid_12">
+                <div class="port" style="width: 222px">
+                    <a href="{% url 'doctors' %}" class="link1 ">Врачи</a>
+                </div>
+                <div class="port">
+                    <a href="{% url 'announcements' %}" class="link1 ">Объявления</a>
+                </div>
+                <div class="port">
+                    <a href="{% url 'documents' %}" class="link1 ">Документы</a></div>
+            </div>
+        </div>
+        <div class="clear"></div>
     </div>
-    <div class="grid_4">
-      <div class="port"><div>
-        <a class="link_img" href="/schedule"><img src="{% static 'main/images/page1_img1.jpg' %}" alt=""><span></span></a>
-        <a href="/schedule" class="maxheight link1">Расписание</a>
-      </div>
-    </div></div>
-    <div class="grid_4"><h1><a href="/"><img src="{% static 'main/images/logo.png' %}" alt="Brand Identity"></a></h1></div>
-    <div class="grid_4 fright">
-      <div class="port">
-        <a class="link_img " href="/contacts"> <img src="{% static 'main/images/page1_img2.jpg' %}" alt=""><span></span></a>
-        <a href="/contacts" class="maxheight link1">Контакты</a>
-      </div>
-    </div>
-    <div class="clear"></div>
-    <div class="port1">
-      <div class="grid_12">
-      <div class="port">
-        <a class="link_img " href="/photo"><img src="{% static 'main/images/page1_img3.jpg' %}" alt=""><span></span></a>
-        <a href="/photo" class="link1 ">Фото</a>
-      </div>
-      <div class="port">
-        <a class="link_img " href="/price"><img src="{% static 'main/images/page1_img4.jpg' %}" alt=""><span></span></a>
-        <a href="/price" class="link1 ">Прайс</a></div>
-      </div>
-    </div>
-    <div class="port2">
-      <div class="grid_12">
-      <div class="port">
-        <!-- <a class="link_img " href=" "><img src="{% static 'main/images/page1_img5.jpg' %}" alt=""><span></span></a> -->
-        <a href="/doctors" class="link1 ">Врачи</a>
-      </div>
-      <div class="port">
-<!--         <a class="link_img " href=" "><img src="{% static 'main/images/page1_img6.jpg' %}" alt=""><span></span></a>
- -->        <a href="/documents" class="link1 ">Документы</a></div>
-      </div>
-    </div>
-  </div>
-  <div class="ic"></div>
+    <div class="ic"></div>
 </header>
 
 <!--==============================Content=================================-->
@@ -73,26 +82,26 @@
 
 <!--==============================footer=================================-->
 
-<footer>    
-  <div class="container_12">
-    <div class="grid_12">
-    <div class="socials">
-      <a href="#"></a>
-      <a href="#"></a>
-      <a href="#"></a>
-      <a href="#"></a>
+<footer>
+    <div class="container_12">
+        <div class="grid_12">
+            <div class="socials">
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </div>
+            <div class="copy">
+                Website Template designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a>
+            </div>
+        </div>
     </div>
-      <div class="copy">
-      Website Template  designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a>
-      </div>
-    </div>
-  </div>
 </footer>
 
 </body>
 
 <link rel="icon" href="{% static 'main/images/favicon.ico' %}">
-<link rel="shortcut icon" href="{% static 'main/images/favicon.ico' %}" />
+<link rel="shortcut icon" href="{% static 'main/images/favicon.ico' %}"/>
 <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
 <script src="{% static 'main/js/jquery.js' %}"></script>
 <script src="{% static 'main/js/jquery-migrate-1.1.1.js' %}"></script>

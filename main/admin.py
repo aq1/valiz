@@ -58,3 +58,8 @@ class PhotoAdmin(admin.ModelAdmin):
 class ContactsAdmin(admin.ModelAdmin):
     list_display = 'id', 'map', 'address', 'schedule', 'city_number', 'mobile_phone', 'email', 'ceo'
     list_editable = list_display[1:]
+
+
+@admin.register(Announcement)
+class AnnouncementAdmin(admin.ModelAdmin):
+    list_display = 'title', 'datetime'
