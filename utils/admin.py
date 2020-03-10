@@ -11,5 +11,8 @@ class LogAdmin(admin.ModelAdmin):
     ordering = '-created_at', 'username'
     actions = ['resolve']
 
+    def get_queryset(self, request):
+        return super().get_queryset(request).filter(resolved=False)
+
     def resolve(self, _, queryset):
         queryset.update(resolved=True)
