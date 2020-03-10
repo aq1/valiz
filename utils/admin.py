@@ -6,6 +6,7 @@ from .models import Log
 @admin.register(Log)
 class LogAdmin(admin.ModelAdmin):
     list_display = 'created_at', 'username', 'resolved'
+    readonly_fields = ['created_at']
     list_display_links = list_display
     list_filter = 'resolved', 'username'
     ordering = '-created_at', 'username'
