@@ -12,7 +12,7 @@ class LogAdmin(admin.ModelAdmin):
     actions = ['resolve']
 
     def get_queryset(self, request):
-        return super().get_queryset(request).filter(resolved=False)
+        return super(LogAdmin, self).get_queryset(request).filter(resolved=False)
 
     def resolve(self, _, queryset):
         queryset.update(resolved=True)
