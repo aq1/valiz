@@ -9,6 +9,7 @@ from main.views import *
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^utils/', include('utils.urls')),
     url(r'^$', index, name='index'),
     url(r'^schedule/$', schedule, name='schedule'),
     url(r'^contacts/$', contacts, name='contacts'),
